@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Self-Service Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Insurance Customer Self-Service Portal</h1>
+        <nav>
+            <button id="fileClaimBtn">File a Claim</button>
+            <button id="trackClaimBtn">Track Claims</button>
+            <button id="chatbotBtn">Chatbot</button>
+            <!-- Adding the search bar in the navigation -->
+            <input type="text" id="searchBar" placeholder="Search ...">
+        </nav>
+    </header>
+
+    <!-- Claim Submission Form -->
+   
+<section id="fileClaimSection" class="hidden">
+    <h2>Submit a New Insurance Claim</h2>
+    <form id="claimForm">
+        <div class="form-group">
+            <label for="policyNumber">Policy Number:</label>
+            <input type="text" id="policyNumber" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="incidentDate">Incident Date:</label>
+            <input type="date" id="incidentDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="incidentDesc">Incident Description:</label>
+            <textarea id="incidentDesc" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="fileUpload">Attach Files:</label>
+            <input type="file" id="fileUpload">
+        </div>
+
+        <button type="submit">Submit Claim</button>
+        <p id="claimMessage" class="success hidden">Claim submitted successfully!</p>
+    </form>
+</section>
+
+    <!-- Claim Tracking -->
+    <section id="trackClaimSection" class="hidden">
+        <h2>Track Your Claims</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Claim Number</th>
+                    <th>Status</th>
+                    <th>Date Submitted</th>
+                </tr>
+            </thead>
+            <tbody id="claimsTableBody">
+                <!-- Dynamic content will be injected here -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Chatbot Integration -->
+    <section id="chatbotSection" class="hidden">
+        <h2>Chat with Us</h2>
+        <div id="chatbotContainer">
+            <iframe
+                allow="microphone;"
+                width="850"
+                height="500"
+                src="https://console.dialogflow.com/api-client/demo/embedded/7ab806ea-122c-4424-b7fd-db8a8bd1be79">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Knowledge Base Search Results -->
+    <section id="knowledgeBase" class="hidden">
+        <h2>Search Knowledge Base Results</h2>
+        <div id="searchResults"></div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
